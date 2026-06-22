@@ -1,23 +1,23 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: blog-route
+  name: son-blog-base-route
   namespace: blog
 spec:
   parentRefs:
     - name: web-gateway
-      namespace: nginx-gateway # Gateway가 있는 ns
+      namespace: nginx-gateway
       sectionName: http-wildcard
     - name: web-gateway
-      namespace: nginx-gateway # Gateway가 있는 ns
+      namespace: nginx-gateway
       sectionName: https-wildcard
   hostnames:
-    - blog.sonhs.com
+    - blog-base.local
   rules:
     - matches:
         - path:
             type: PathPrefix
             value: /
       backendRefs:
-        - name: son-blog
+        - name: son-blog-base-service
           port: 80

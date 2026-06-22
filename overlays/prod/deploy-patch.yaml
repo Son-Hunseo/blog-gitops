@@ -1,0 +1,15 @@
+- op: replace
+  path: /metadata/name
+  value: son-blog-deploy
+- op: replace
+  path: /metadata/labels/app
+  value: son-blog
+- op: replace
+  path: /spec/selector/matchLabels/app
+  value: son-blog
+- op: replace
+  path: /spec/template/metadata/labels/app
+  value: son-blog
+- op: replace
+  path: /spec/template/spec/containers/0/name
+  value: son-blog

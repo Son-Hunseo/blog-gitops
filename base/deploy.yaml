@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: son-blog-base-deploy
+  namespace: blog
+  labels:
+    app: son-blog-base
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: son-blog-base
+  template:
+    metadata:
+      labels:
+        app: son-blog-base
+    spec:
+      imagePullSecrets:
+        - name: harbor-registry-key
+      containers:
+        - name: son-blog-base
+          image: son-blog-image
+          ports:
+            - containerPort: 80

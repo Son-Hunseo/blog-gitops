@@ -15,8 +15,6 @@ spec:
       labels:
         app: son-blog-base
     spec:
-      imagePullSecrets:
-        - name: harbor-registry-key
       containers:
         - name: son-blog-base
           image: son-blog-image

@@ -7,7 +7,7 @@ resources:
 images:
   - name: son-blog-image
     newName: harbor.onprem.local/son/blog
-    newTag: "0.6"
+    newTag: "0.9"
 
 patches:
   - target:

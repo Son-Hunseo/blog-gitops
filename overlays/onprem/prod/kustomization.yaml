@@ -8,7 +8,7 @@ resources:
 images:
   - name: son-blog-image
     newName: harbor.onprem.arpa/son/blog
-    newTag: "3.2"
+    newTag: "3.3"
 
 patches:
   - target:
